@@ -9,8 +9,7 @@ if(isset($_POST['update_cart'])){
     mysqli_query($conn, "UPDATE `cart` SET quantity = '$update_quantity' WHERE id = '$update_id'") or die('query failed');
     $message[] = 'cart quantity updated successfully!';
  }
- 
- if(isset($_GET['remove'])){
+  if(isset($_GET['remove'])){
     $remove_id = $_GET['remove'];
     echo (log ( $remove_id));
     mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$remove_id'") or die('query failed');
@@ -34,27 +33,28 @@ if(isset($_POST['update_cart'])){
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <!-- link css -->
         <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/footer.css">
     </head>
 
     <body>
         <div class="container">
             <!-- nav -->
             <div class="nav">
-            <div class="logo">Food Order</div>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="index.php"><i class="fa-solid fa-cart-shopping"></i></a></i>
-                </li>
-                <li> <a href="profile_user.php"><i class="fa-solid fa-user"></i></a></li>
-            </ul>
-        </div>
+                <div class="logo">Food Order</div>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.php"><i class="fa-solid fa-cart-shopping"></i></a></i>
+                    </li>
+                    <li> <a href="profile_user.php"><i class="fa-solid fa-user"></i></a></li>
+                </ul>
+            </div>
 
-                <!-- cart -->
+            <!-- cart -->
             <div class="shopping-cart">
-            <h1 class="heading">shopping cart</h1>
+                <h1 class="heading">shopping cart</h1>
                 <table>
                     <thead>
                         <th>image</th>
@@ -66,11 +66,11 @@ if(isset($_POST['update_cart'])){
                     </thead>
                     <tbody>
                         <?php
-$cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-$grand_total = 0;
-if(mysqli_num_rows($cart_query) > 0){
-while($fetch_cart = mysqli_fetch_assoc($cart_query)){
-?>
+                   $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+                    $grand_total = 0;
+                    if(mysqli_num_rows($cart_query) > 0){
+                     while($fetch_cart = mysqli_fetch_assoc($cart_query)){
+                    ?>
                             <tr>
                                 <td>
                                     <img src="<?php echo $fetch_cart['img'];?>" height="100" alt="product">
@@ -92,12 +92,12 @@ while($fetch_cart = mysqli_fetch_assoc($cart_query)){
                                 <td><a href="cart.php?remove=<?php echo $fetch_cart['id']; ?>" class="delete-btn" onclick="return confirm('remove item from cart?');">remove</a></td>
                             </tr>
                             <?php
-$grand_total += $sub_total;
-}
-}else{
-echo '<tr><td style="padding:20px; text-transform:capitalize;" colspan="6">no item added</td></tr>';
-}
-?>
+                           $grand_total += $sub_total;
+                           }
+                           }else{
+                           echo '<tr><td style="padding:20px; text-transform:capitalize;" colspan="6">no item added</td></tr>';
+                           }
+                            ?>
                                 <tr class="table-bottom">
                                     <td colspan="4">grand total :</td>
                                     <td>$
@@ -115,59 +115,62 @@ echo '<tr><td style="padding:20px; text-transform:capitalize;" colspan="6">no it
         </div>
         <footer class="footer-distributed">
 
-<div class="footer-left">
+            <div class="footer-left">
 
-    <h3>Food<span>order</span></h3>
+                <h3>Food
+                    < span>order
+                        </>
+                </h3>
 
-    <p class="footer-links">
-        <a href="#" class="link-1">Home</a>
+                <p class="footer-links">
+                    <a href="#" class="link-1">Home</a>
 
-        <a href="#">About</a>
+                    <a href="#">About</a>
 
-        <a href="#">Menu</a>
+                    <a href="#">Menu</a>
 
-        <a href="#">Contact</a>
-    </p>
+                    <a href="#">Contact</a>
+                </p>
 
-    <p class="footer-company-name">Company Name © 2015</p>
-</div>
+                <p class="footer-company-name">Company Name © 2015</p>
+            </div>
 
-<div class="footer-center">
+            <div class="f                           ooter-center">
 
-    <div>
-        <i class="fa fa-map-marker"></i>
-        <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
-    </div>
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+                </div>
 
-    <div>
-        <i class="fa fa-phone"></i>
-        <p>+1.555.555.5555</p>
-    </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+1.555.555.5555</p>
+                </div>
 
-    <div>
-        <i class="fa fa-envelope"></i>
-        <p><a href="mailto:support@company.com">support@company.com</a></p>
-    </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@company.com">support@company.com</a></p>
+                </div>
 
-</div>
+            </div>
 
-<div class="footer-right">
+            <div class="footer-right">
 
-    <p class="footer-company-about">
-        <span>About the company</span> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-    </p>
+                <p class="footer-company-about">
+                    <span>About the company</span> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+                </p>
 
-    <div class="footer-icons">
+                <div class="footer-icons">
 
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
 
-    </div>
+                </div>
 
-</div>
+            </div>
 
-</footer>
+        </footer>
     </body>
 
     </html>

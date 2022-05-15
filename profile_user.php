@@ -12,7 +12,7 @@ if(!isset($user_id )){
 if (isset($_GET['logout'])){
     unset($user_id);
     session_destroy();
-    header('Location: login.php');
+    header('Location:landing.php');
 }
 ?>
 
@@ -28,6 +28,7 @@ if (isset($_GET['logout'])){
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
         <!-- link css -->
         <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/footer.css">
     </head>
 
     <body>
@@ -62,7 +63,7 @@ $fetch_user = mysqli_fetch_assoc($select_user);
                 <div class="flex">
                     <a href="login.php " class="btn">login </a>
                     <a href="register.php" class="option-btn">register</a>
-                    <a href="index.php?logout=<?php echo $user_id;?> " onclick="return confirm
+                    <a href="Profile_user.php?logout=<?php echo $user_id;?> " onclick="return confirm
 ('are you sure you want to logout?');" class="delete-btn"> logout </a>
                 </div>
             </div>

@@ -13,10 +13,16 @@ if(isset($_POST['submit'])) {
 
         if(mysqli_num_rows($select) > 0) {
             $message[] = 'user already exits!';
-        }else {
-            mysqli_query($conn, "INSERT INTO `user_form`(name, email, password) VALUES('$name', '$email', '$pass')") or die('query failed');
-            header('location:login.php');
-            $message[] = 'Register successfully!';
+        }else  {
+
+            if($cpass != $pass) {
+                $message[] = 'password not match each other!';
+            } else {
+                mysqli_query($conn, "INSERT INTO `user_form`(name, email, password) 
+                VALUES('$name', '$email', '$pass')") or die('query failed');
+                header('location:login.php');
+                $message[] = 'Register successfully!';
+            }
         }
 }
     
@@ -32,6 +38,7 @@ if(isset($_POST['submit'])) {
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <!-- link css -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
 </head>
 
 <body>

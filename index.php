@@ -1,6 +1,7 @@
 <?php
 
 include 'config.php';
+
 session_start();
 $user_id = $_SESSION['user_id'];
 
@@ -15,7 +16,6 @@ if(isset($_GET['logout'])){
 };
 
 if(isset($_POST['add_to_cart'])){
-
    $product_name = $_POST['product_name'];
    $product_price = $_POST['product_price'];
    $product_image = $_POST['product_image'];
@@ -26,32 +26,12 @@ if(isset($_POST['add_to_cart'])){
    if(mysqli_num_rows($select_cart) > 0){
       $message[] = 'product already added to cart!';
    }else{
-      mysqli_query($conn, "INSERT INTO `cart`(user_id, name, price, img, quantity) VALUES ('$user_id', '$product_name', '$product_price', '$product_image', '$product_quantity')") or die('query error');
+      mysqli_query($conn, "INSERT INTO `cart`(user_id, name, price, img, quantity) VALUES 
+      ('$user_id', '$product_name', '$product_price', '$product_image', '$product_quantity')") or die('query error');
       $message[] = 'product added to cart!';
    }
-
 };
-
-if(isset($_POST['update_cart'])){
-   $update_quantity = $_POST['cart_quantity'];
-   $update_id = $_POST['cart_id'];
-   mysqli_query($conn, "UPDATE `cart` SET quantity = '$update_quantity' WHERE id = '$update_id'") or die('query failed');
-   $message[] = 'cart quantity updated successfully!';
-}
-
-if(isset($_GET['remove'])){
-   $remove_id = $_GET['remove'];
-   mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$remove_id'") or die('query failed');
-   header('location:index.php');
-}
-  
-if(isset($_GET['delete_all'])){
-   mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-   header('location:index.php');
-}
-
 ?>
-
 
     <!DOCTYPE html>
     <html lang="en">
@@ -65,6 +45,7 @@ if(isset($_GET['delete_all'])){
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <!-- link css -->
         <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/footer.css">
     </head>
 
     <body>
@@ -115,7 +96,7 @@ if(isset($_GET['delete_all'])){
                                 <input type="hidden" name="product_image" value="<?php echo $fetch_product['img']; ?>">
                                 <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
                                 <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
-                                <input type="submit" name="add_to_cart" class="btn">
+                                <input type="submit" value="Buys" name="add_to_cart" class="btn">
                             </form>
                             <?php
                                };
@@ -177,9 +158,7 @@ if(isset($_GET['delete_all'])){
                                     </div>
 
                                 </footer>
-                            </div>
-                        </body>
+                    </div>
+    </body>
 
-                     </html>
-
-
+    </html>
