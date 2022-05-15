@@ -31,9 +31,9 @@ if(isset($_POST['update_cart'])){
         <title>Cart</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-        <!-- link css -->
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <link rel="stylesheet" href="./assets/css/footer.css">
+    <!-- link css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
     </head>
 
     <body>
@@ -113,14 +113,12 @@ if(isset($_POST['update_cart'])){
 
             </div>
         </div>
+        <!-- Footer -->
         <footer class="footer-distributed">
 
             <div class="footer-left">
 
-                <h3>Food
-                    < span>order
-                        </>
-                </h3>
+                <h3>Food<span>order</span></h3>
 
                 <p class="footer-links">
                     <a href="#" class="link-1">Home</a>
@@ -135,7 +133,7 @@ if(isset($_POST['update_cart'])){
                 <p class="footer-company-name">Company Name © 2015</p>
             </div>
 
-            <div class="f                           ooter-center">
+            <div class="footer-center">
 
                 <div>
                     <i class="fa fa-map-marker"></i>

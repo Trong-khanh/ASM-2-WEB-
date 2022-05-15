@@ -55,6 +55,7 @@
         </div>
     
      </div>
+
      <footer class="footer-distributed">
 
 <div class="footer-left">
@@ -108,7 +109,6 @@
     </div>
 
 </div>
-
 </footer>
 </body>
 
