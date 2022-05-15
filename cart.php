@@ -31,9 +31,9 @@ if(isset($_POST['update_cart'])){
         <title>Cart</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <!-- link css -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/footer.css">
+        <!-- link css -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/footer.css">
     </head>
 
     <body>
@@ -102,7 +102,7 @@ if(isset($_POST['update_cart'])){
                                     <td colspan="4">grand total :</td>
                                     <td>$
                                         <?php echo $grand_total; ?>/-</td>
-                                    <td><a href="index.php?delete_all" onclick="return confirm('delete all from cart?');" class="delete-btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">delete all</a></td>
+                                    <td><a href="cart.php?delete_all" onclick="return confirm('delete all from cart?');" class="delete-btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">delete all</a></td>
                                 </tr>
                     </tbody>
                 </table>
@@ -115,65 +115,64 @@ if(isset($_POST['update_cart'])){
         </div>
         <footer class="footer-distributed">
 
-<div class="footer-left">
+            <div class="footer-left">
 
-  <h3>Company<span>logo</span></h3>
+                <h3>Company<span>logo</span></h3>
 
-  <p class="footer-links">
-    <a href="#" class="link-1">Home</a>
-    
-    <a href="#">Blog</a>
-  
-    <a href="#">Pricing</a>
-  
-    <a href="#">About</a>
-    
-    <a href="#">Faq</a>
-    
-    <a href="#">Contact</a>
-  </p>
+                <p class="footer-links">
+                    <a href="#" class="link-1">Home</a>
 
-  <p class="footer-company-name">Company Name © 2015</p>
-</div>
+                    <a href="#">Blog</a>
 
-<div class="footer-center">
+                    <a href="#">Pricing</a>
 
-  <div>
-    <i class="fa fa-map-marker"></i>
-    <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
-  </div>
+                    <a href="#">About</a>
 
-  <div>
-    <i class="fa fa-phone"></i>
-    <p>+1.555.555.5555</p>
-  </div>
+                    <a href="#">Faq</a>
 
-  <div>
-    <i class="fa fa-envelope"></i>
-    <p><a href="mailto:support@company.com">support@company.com</a></p>
-  </div>
+                    <a href="#">Contact</a>
+                </p>
 
-</div>
+                <p class="footer-company-name">Company Name © 2015</p>
+            </div>
 
-<div class="footer-right">
+            <div class="footer-center">
 
-  <p class="footer-company-about">
-    <span>About the company</span>
-    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-  </p>
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+                </div>
 
-  <div class="footer-icons">
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+1.555.555.5555</p>
+                </div>
 
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-    <a href="#"><i class="fa fa-github"></i></a>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@company.com">support@company.com</a></p>
+                </div>
 
-  </div>
+            </div>
 
-</div>
+            <div class="footer-right">
 
-</footer>
+                <p class="footer-company-about">
+                    <span>About the company</span> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+                </p>
+
+                <div class="footer-icons">
+
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-github"></i></a>
+
+                </div>
+
+            </div>
+
+        </footer>
     </body>
 
     </html>
